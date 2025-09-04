@@ -1,3 +1,59 @@
 body {
-    background-color: skyblue;
-}
+        height: 100%; /* Asegura que el body y html ocupen toda la altura */
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+    }
+
+    .login-container {
+        background: url('../images/bg_login.png') no-repeat center center fixed;
+        background-size: cover; /* Cubre todo el contenedor */
+        display: flex; /* Para centrar el contenido */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+        padding: 20px;
+    }
+
+    .login-box {
+        background-color: rgba(255, 255, 255, 0.6); /* Transparencia para el fondo */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        max-width: 450px;
+        width: 100%;
+        text-align: left;
+        /* Estilos para centrar el contenido */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente los elementos dentro del login-box */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Aumenta el espacio entre grupos de campos */
+        text-align: left; /* Asegura que la etiqueta y el input se alineen a la izquierda */
+        width: 100%;
+    }
+
+    /* Mejora el estilo de las etiquetas */
+    .login-box .form-group label {
+        font-weight: 500;
+        color: #495057;
+        margin-bottom: 8px; /* Espacio entre la etiqueta y el input */
+        display: block; /* La etiqueta se muestra en su propia línea */
+    }
+
+    /* Asegura que los campos tengan el mismo tamaño */
+    .login-box .form-control {
+        display: block; /* Hace que el input ocupe todo el ancho disponible */
+        width: 100%; /* El input se ajusta al 100% de su contenedor */
+        padding: 12px 15px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+    }
+
+    /* Asegura que el botón también tenga el mismo ancho */
+    .login-box .btn-primary {
+        display: block;
+        padding: 12px 15px;
+    }
