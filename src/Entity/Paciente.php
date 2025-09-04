@@ -47,14 +47,14 @@ class Paciente
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTime $fechaAlta = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTime $operAlta = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $operAlta = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTime $fechaMod = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTime $operMod = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $operMod = null;
 
     #[ORM\Column]
     private ?int $credencialNro = null;
@@ -199,17 +199,6 @@ class Paciente
         return $this;
     }
 
-    public function getOperAlta(): ?\DateTime
-    {
-        return $this->operAlta;
-    }
-
-    public function setOperAlta(?\DateTime $operAlta): static
-    {
-        $this->operAlta = $operAlta;
-
-        return $this;
-    }
 
     public function getFechaMod(): ?\DateTime
     {
@@ -223,17 +212,6 @@ class Paciente
         return $this;
     }
 
-    public function getOperMod(): ?\DateTime
-    {
-        return $this->operMod;
-    }
-
-    public function setOperMod(?\DateTime $operMod): static
-    {
-        $this->operMod = $operMod;
-
-        return $this;
-    }
 
     public function getCredencialNro(): ?int
     {
@@ -256,6 +234,28 @@ class Paciente
     {
         $this->sexo = $sexo;
 
+        return $this;
+    }
+
+    public function getOperAlta(): ?string
+    {
+        return $this->operAlta;
+    }
+
+    public function setOperAlta(?string $operAlta): static
+    {
+        $this->operAlta = $operAlta;
+        return $this;
+    }
+
+    public function getOperMod(): ?string
+    {
+        return $this->operMod;
+    }
+
+    public function setOperMod(?string $operMod): static
+    {
+        $this->operMod = $operMod;
         return $this;
     }
 }

@@ -20,14 +20,14 @@ class ObraSocial
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $fechaAlta = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $operAlta = null;
+    #[ORM\Column(length: 255, nullable: true)]
+        private ?string $operAlta = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTime $fechaMod = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $operMod = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $operMod = null;
 
     public function getId(): ?int
     {
@@ -58,17 +58,28 @@ class ObraSocial
         return $this;
     }
 
-    public function getOperAlta(): ?\DateTime
+    public function getOperAlta(): ?string
     {
         return $this->operAlta;
     }
 
-    public function setOperAlta(\DateTime $operAlta): static
+    public function setOperAlta(?string $operAlta): static
     {
         $this->operAlta = $operAlta;
-
         return $this;
     }
+
+    public function getOperMod(): ?string
+    {
+        return $this->operMod;
+    }
+
+    public function setOperMod(?string $operMod): static
+    {
+        $this->operMod = $operMod;
+        return $this;
+    }
+    
 
     public function getFechaMod(): ?\DateTime
     {
@@ -82,15 +93,4 @@ class ObraSocial
         return $this;
     }
 
-    public function getOperMod(): ?\DateTime
-    {
-        return $this->operMod;
-    }
-
-    public function setOperMod(\DateTime $operMod): static
-    {
-        $this->operMod = $operMod;
-
-        return $this;
-    }
 }
